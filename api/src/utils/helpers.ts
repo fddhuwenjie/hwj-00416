@@ -1,6 +1,7 @@
 import dayjs from 'dayjs';
 import type { Customer, Order } from '../../../shared/types.js';
 
+
 export function generateOrderNo(): string {
   const now = dayjs();
   const dateStr = now.format('YYYYMMDD');

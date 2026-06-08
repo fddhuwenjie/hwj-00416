@@ -11,6 +11,10 @@ import deviceRoutes from './src/routes/device.routes.js'
 import orderRoutes from './src/routes/order.routes.js'
 import customerRoutes from './src/routes/customer.routes.js'
 import statsRoutes from './src/routes/stats.routes.js'
+import maintenanceRoutes from './src/routes/maintenance.routes.js'
+import contractRoutes from './src/routes/contract.routes.js'
+import packageRoutes from './src/routes/package.routes.js'
+import couponRoutes from './src/routes/coupon.routes.js'
 
 dotenv.config()
 
@@ -30,6 +34,10 @@ app.use('/api/devices', deviceRoutes)
 app.use('/api/orders', orderRoutes)
 app.use('/api/customers', customerRoutes)
 app.use('/api/stats', statsRoutes)
+app.use('/api/maintenance', maintenanceRoutes)
+app.use('/api/contracts', contractRoutes)
+app.use('/api/packages', packageRoutes)
+app.use('/api/coupons', couponRoutes)
 
 app.use(
   '/api/health',

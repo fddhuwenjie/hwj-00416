@@ -1,5 +1,17 @@
 import dayjs from 'dayjs';
-import type { DeviceStatus, OrderStatus, CustomerLevel, DeviceReturnStatus } from '../../shared/types.js';
+import type {
+  DeviceStatus,
+  OrderStatus,
+  CustomerLevel,
+  DeviceReturnStatus,
+  MaintenanceStatus,
+  MaintenancePriority,
+  MaintenanceType,
+  ContractStatus,
+  CouponType,
+  CouponStatus,
+  PackageStatus,
+} from '../../shared/types.js';
 
 export function formatCurrency(amount: number): string {
   return `¥${amount.toFixed(2)}`;
@@ -55,3 +67,46 @@ export function getCreditScoreColor(score: number): string {
   if (score >= 60) return 'text-yellow-600';
   return 'text-red-600';
 }
+
+export const maintenanceStatusMap: Record<MaintenanceStatus, { label: string; color: string }> = {
+  pending: { label: '待处理', color: 'bg-yellow-100 text-yellow-800' },
+  assigned: { label: '已分配', color: 'bg-blue-100 text-blue-800' },
+  in_progress: { label: '维修中', color: 'bg-purple-100 text-purple-800' },
+  completed: { label: '已完成', color: 'bg-green-100 text-green-800' },
+  cancelled: { label: '已取消', color: 'bg-gray-100 text-gray-800' },
+};
+
+export const maintenancePriorityMap: Record<MaintenancePriority, { label: string; color: string }> = {
+  high: { label: '高', color: 'bg-red-100 text-red-800' },
+  medium: { label: '中', color: 'bg-yellow-100 text-yellow-800' },
+  low: { label: '低', color: 'bg-green-100 text-green-800' },
+};
+
+export const maintenanceTypeMap: Record<MaintenanceType, { label: string; color: string }> = {
+  repair: { label: '维修', color: 'bg-orange-100 text-orange-800' },
+  maintenance: { label: '保养', color: 'bg-blue-100 text-blue-800' },
+};
+
+export const contractStatusMap: Record<ContractStatus, { label: string; color: string }> = {
+  draft: { label: '草稿', color: 'bg-gray-100 text-gray-800' },
+  pending_signature: { label: '待签署', color: 'bg-yellow-100 text-yellow-800' },
+  active: { label: '已生效', color: 'bg-green-100 text-green-800' },
+  expired: { label: '已过期', color: 'bg-red-100 text-red-800' },
+  terminated: { label: '已终止', color: 'bg-gray-100 text-gray-800' },
+};
+
+export const couponTypeMap: Record<CouponType, { label: string; color: string }> = {
+  fixed: { label: '固定金额', color: 'bg-blue-100 text-blue-800' },
+  percentage: { label: '折扣比例', color: 'bg-purple-100 text-purple-800' },
+};
+
+export const couponStatusMap: Record<CouponStatus, { label: string; color: string }> = {
+  active: { label: '有效', color: 'bg-green-100 text-green-800' },
+  inactive: { label: '无效', color: 'bg-gray-100 text-gray-800' },
+  expired: { label: '已过期', color: 'bg-red-100 text-red-800' },
+};
+
+export const packageStatusMap: Record<PackageStatus, { label: string; color: string }> = {
+  active: { label: '启用', color: 'bg-green-100 text-green-800' },
+  inactive: { label: '停用', color: 'bg-gray-100 text-gray-800' },
+};

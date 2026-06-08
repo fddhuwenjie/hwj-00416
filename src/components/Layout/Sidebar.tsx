@@ -8,6 +8,10 @@ import {
   ChevronLeft,
   ChevronRight,
   BarChart3,
+  Wrench,
+  FileText,
+  Gift,
+  Tags,
 } from 'lucide-react';
 import { useAppStore } from '../../store/app.js';
 import { cn } from '../../lib/utils.js';
@@ -18,6 +22,10 @@ const menuItems = [
   { path: '/orders', label: '订单管理', icon: ShoppingCart },
   { path: '/calendar', label: '日历视图', icon: Calendar },
   { path: '/customers', label: '客户管理', icon: Users },
+  { path: '/maintenance', label: '设备维保', icon: Wrench },
+  { path: '/contracts', label: '合同管理', icon: FileText },
+  { path: '/packages', label: '套餐管理', icon: Tags },
+  { path: '/coupons', label: '优惠券', icon: Gift },
   { path: '/stats', label: '统计报表', icon: BarChart3 },
 ];
 
